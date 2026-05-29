@@ -551,7 +551,7 @@ footer a:hover{color:white}
 }
 @media(max-width:400px){.products-grid{grid-template-columns:1fr}}
 
-/* ═══════════════ MOBILE ═══════════════ */
+/* ═══════ MOBILE ═══════ */
 @media(max-width:768px){
   #editBar{flex-wrap:wrap;padding:8px 12px;gap:6px}
   #editBar .eb-actions{flex-wrap:wrap;gap:6px;margin-left:0;width:100%}
@@ -565,7 +565,6 @@ footer a:hover{color:white}
   .btn-wa{font-size:12px;padding:8px 12px}
   #heroBanner{padding:24px 14px}
   .hero-title{font-size:clamp(18px,5vw,26px)}
-  .hero-subtitle{font-size:13px}
   .page-layout{grid-template-columns:1fr;gap:14px;margin:14px auto;padding:0 10px}
   .sidebar{position:static;border-radius:10px}
   .cat-list{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:8px 10px 12px;scrollbar-width:none}
@@ -575,7 +574,6 @@ footer a:hover{color:white}
   .cat-item button.active{background:var(--navy);color:white;border-color:var(--navy)}
   .sidebar-contact{display:none}
   .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .toolbar-title{font-size:15px}
   .card-img{height:160px}
   .card-body{padding:10px 10px 6px;gap:4px}
   .card-title{font-size:12.5px}
@@ -583,8 +581,7 @@ footer a:hover{color:white}
   .card-footer{padding:8px 10px 10px;flex-direction:column;gap:5px}
   .btn-specs,.btn-quote-card{width:100%;padding:10px;font-size:12px;min-height:42px}
   .modal-overlay{padding:0;align-items:flex-end}
-  .modal-box{border-radius:16px 16px 0 0;max-width:100%;width:100%;max-height:90vh;animation:slideUpM .25s ease}
-  @keyframes slideUpM{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .modal-box{border-radius:16px 16px 0 0;max-width:100%;width:100%;max-height:90vh}
   .modal-header{padding:16px 16px 0}
   .modal-name{font-size:17px}
   .gallery-main{height:210px}
@@ -933,315 +930,1286 @@ const DEFAULT_CATEGORIES = [
 ];
 
 const DEFAULT_PRODUCTS = [
-
-  // ═══ BOMBAS DE VACÍO ═══
-  {id:1, cat:"bombas", sku:"DVB-FAN420-001", badge:"", img:"", icon:"⚙️",
-   name:"Bomba de Vacío FAN 420",
-   subtitle:"Unidad completa — repuesto original",
-   desc:"Bomba de vacío FAN 420 completa, repuesto original para Tanque Vacuum MDV-DV y MDV-DV2. Máxima eficiencia de succión para operaciones de campo petrolero.",
-   compat:["Tanque Vacuum MDV-DV","Tanque Vacuum MDV-DV2","SuperVacuum"],
-   specs:[["Modelo","FAN 420"],["Tipo","Lóbulos / Roots"],["Capacidad","420 CFM"],["Vacío Máximo","−0.90 bar / −27 inHg"],["Accionamiento","PTO o motor independiente"],["Conexiones","Entrada/salida 4\""],["Lubricación","Aceite SAE 40 / Vacuoline"],["Cap. Aceite","3 litros"],["Peso","85 – 95 kg"]],
-   manualUrl:"https://www.mdivica.com/s/MANTENIMIENTO-PREVENTIVO-BOMBA-DE-VACIO-FAN-420.pdf",
-   waMsg:"Hola DIVICA, necesito cotizar la Bomba de Vacío FAN 420. Ref: DVB-FAN420-001"},
-
-  {id:2, cat:"bombas", sku:"DVB-JRP360-002", badge:"new", img:"", icon:"⚙️",
-   name:"Bomba de Vacío JUROP RV360",
-   subtitle:"Unidad completa — serie industrial RV",
-   desc:"Bomba de vacío JUROP modelo RV360, unidad completa de repuesto. Fabricación italiana de alta calidad para equipos de succión industrial. Compatible con montaje directo en camiones y semirremolques vacuum.",
-   compat:["Camiones Vacuum JUROP","Equipos de succión industrial","Tanques vacuum tipo europeo"],
-   specs:[["Marca","JUROP"],["Modelo","RV360"],["Tipo","Paletas deslizantes"],["Desplazamiento","360 m³/h"],["Vacío Máximo","−0.92 bar"],["Presión Máx.","0.5 bar"],["Velocidad","540 – 1.000 RPM"],["Aceite","ISO VG 100"],["Peso","Aprox. 85 kg"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar la Bomba JUROP RV360. Ref: DVB-JRP360-002"},
-
-  // ═══ MOTOR Y PROPULSIÓN ═══
-  {id:3, cat:"motor", sku:"DVM-DSL-003", badge:"", img:"", icon:"🔩",
-   name:"Motor Diesel",
-   subtitle:"Propulsión independiente para bomba de vacío",
-   desc:"Motor diesel auxiliar para accionar la bomba de vacío de forma independiente al motor principal del vehículo. Disponible en diferentes potencias según la aplicación y el modelo de bomba.",
-   compat:["Bomba FAN 420","JUROP RV360","Bombas de vacío industriales"],
-   specs:[["Tipo","Motor diesel 4 tiempos"],["Potencia","Según requerimiento (25 – 100 HP)"],["Arranque","Eléctrico 12/24V"],["Combustible","Diesel / ACPM"],["Refrigeración","Agua o aire"],["Acoplamiento","Por PTO o correa"],["Norma","EPA / Tier 4"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar un Motor Diesel para bomba de vacío. Ref: DVM-DSL-003"},
-
-  // ═══ BOCAS DE VISITA Y HERRAJES ═══
-  {id:4, cat:"bocas", sku:"DVB-BV21-004", badge:"", img:"", icon:"🔲",
-   name:"Boca de Visita 21\"",
-   subtitle:"Acceso al tanque — cierre hermético",
-   desc:"Boca de visita de 21 pulgadas para acceso al interior del tanque vacuum o cisterna. Tapa de acero con cierre hermético y empaque resistente a hidrocarburos. Incluye bisagras y sistema de cierre.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tank","Cisternas"],
-   specs:[["Diámetro","21\" (533 mm)"],["Material","Acero A-36 / ASTM"],["Empaque","EPDM / Neoprene"],["Cierre","Pernos de mariposa"],["Bisagras","Acero galvanizado"],["Acabado","Pintura anticorrosiva"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Boca de Visita 21\". Ref: DVB-BV21-004"},
-
-  {id:5, cat:"bocas", sku:"DVB-BV30-005", badge:"", img:"", icon:"🔲",
-   name:"Boca de Visita 30\"",
-   subtitle:"Acceso de gran diámetro — limpieza e inspección",
-   desc:"Boca de visita de 30 pulgadas de gran diámetro para acceso amplio al interior del tanque. Ideal para operaciones de limpieza, inspección y mantenimiento interno. Cierre hermético con múltiples pernos.",
-   compat:["Tanques Vacuum de gran capacidad","Frac Tanks","Tanques estacionarios"],
-   specs:[["Diámetro","30\" (762 mm)"],["Material","Acero A-36 / ASTM"],["Empaque","EPDM resistente a HC"],["Cierre","Pernos de mariposa doble hilera"],["Acabado","Pintura epóxica anticorrosiva"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Boca de Visita 30\". Ref: DVB-BV30-005"},
-
-  // ═══ FILTROS ═══
-  {id:6, cat:"filtros", sku:"DVF-PRM-006", badge:"", img:"", icon:"🛡️",
-   name:"Filtro Primario",
-   subtitle:"Primera línea de protección — entrada del sistema",
-   desc:"Filtro primario para el sistema de vacío. Primera barrera de protección que retiene sólidos gruesos y partículas de gran tamaño antes de que lleguen al sistema de filtración fino y a la bomba.",
-   compat:["Bomba FAN 420","JUROP RV360","Sistemas de vacío industriales"],
-   specs:[["Posición","Entrada del sistema (pre-filtro)"],["Retención","Partículas >500 micras"],["Material Cuerpo","Acero carbono / inoxidable"],["Elemento Filtrante","Malla de acero inox."],["Conexión","2\" – 4\" NPT o flange"],["Mantenimiento","Limpieza semanal"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Filtro Primario para sistema vacuum. Ref: DVF-PRM-006"},
-
-  {id:7, cat:"filtros", sku:"DVF-SEC-007", badge:"", img:"", icon:"🛡️",
-   name:"Filtro Secundario",
-   subtitle:"Filtración fina — protección directa de bomba",
-   desc:"Filtro secundario de alta eficiencia para el sistema de vacío. Filtra partículas finas y líquidos residuales que pasaron el filtro primario. Protección directa de la bomba de vacío.",
-   compat:["Bomba FAN 420","JUROP RV360","Sistemas de vacío industriales"],
-   specs:[["Posición","Línea directa a bomba (post-filtro primario)"],["Retención","Partículas >50 micras"],["Tipo","Cartucho intercambiable"],["Material","Acero inox. / Polipropileno"],["Conexión","1.5\" – 3\" NPT"],["Intervalo Cambio","250 horas o por presión diferencial"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Filtro Secundario para sistema vacuum. Ref: DVF-SEC-007"},
-
-  {id:13, cat:"filtros", sku:"DVF-AIR-013", badge:"", img:"", icon:"🛡️",
-   name:"Filtro de Admisión / Aire",
-   subtitle:"Filtración de aire — motor y sistema de ventilación",
-   desc:"Filtro de admisión de aire para motor diesel auxiliar y sistema de ventilación de la bomba de vacío. Elemento filtrante de alta capacidad para ambientes industriales con polvo y partículas.",
-   compat:["Motor Diesel auxiliar","Bomba FAN 420","JUROP RV360"],
-   specs:[["Tipo","Filtro de papel / tela"],["Eficiencia","99.9% partículas >10μ"],["Diámetro","Según motor (consultar)"],["Material","Papel filtrante / fibra sintética"],["Intervalo Cambio","Cada 500 horas o por obstrucción"],["Indicador","Visual / por presión diferencial"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Filtro de Admisión / Aire. Ref: DVF-AIR-013"},
-
-  // ═══ VÁLVULAS ═══
-  {id:8, cat:"valvulas", sku:"DVV-VAC-008", badge:"", img:"", icon:"🔧",
-   name:"Válvula de Vacío",
-   subtitle:"Control del sistema de vacío",
-   desc:"Válvula especializada para el control y regulación del sistema de vacío. Permite el corte y apertura del flujo de vacío en el sistema. Fabricada en materiales resistentes a presiones negativas.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Sistemas de vacío industriales"],
-   specs:[["Tipo","Válvula de vacío — corte"],["Rango","Hasta −1 bar"],["Material Cuerpo","Hierro dúctil / Acero"],["Asiento","NBR / PTFE"],["Conexión","2\" – 4\" NPT o flange"],["Actuación","Manual / neumática"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Válvula de Vacío. Ref: DVV-VAC-008"},
-
-  {id:9, cat:"valvulas", sku:"DVV-SBP-009", badge:"", img:"", icon:"🔧",
-   name:"Válvula de Sobrepresión",
-   subtitle:"Seguridad contra presión excesiva",
-   desc:"Válvula de seguridad contra sobrepresión para el tanque y el sistema de vacío. Se abre automáticamente al superar la presión de tarado para proteger el equipo. Calibrada de fábrica.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Tanques estacionarios","Frac Tanks"],
-   specs:[["Tipo","Válvula de alivio de presión"],["Presión de Tarado","Ajustable — según aplicación"],["Material","Bronce / Acero inoxidable"],["Asiento","PTFE / NBR"],["Conexión","1\" – 2\" NPT"],["Norma","API 2000 / ASME"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Válvula de Sobrepresión. Ref: DVV-SBP-009"},
-
-  {id:10, cat:"valvulas", sku:"DVV-CRD-010", badge:"", img:"", icon:"🔧",
-   name:"Válvula para Carga y Descarga",
-   subtitle:"Control del flujo de producto",
-   desc:"Válvula de carga y descarga para el control del flujo del producto (vacío o presión). Permite la operación de llenado y vaciado del tanque. Disponible en diferentes diámetros.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tank","Cisternas"],
-   specs:[["Tipo","Bola / Mariposa / Guillotina"],["Diámetros","3\" – 4\" – 6\""],["Material","Acero carbono / inoxidable"],["Asiento","EPDM / NBR / PTFE"],["Operación","Manual o neumática"],["Presión","PN 10 – PN 16"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Válvula de Carga y Descarga. Ref: DVV-CRD-010"},
-
-  {id:11, cat:"valvulas", sku:"DVV-WFR-011", badge:"", img:"", icon:"🔧",
-   name:"Válvula Mariposa Tipo Wafer",
-   subtitle:"Entre flanges — succión y descarga",
-   desc:"Válvula mariposa tipo wafer para montaje entre flanges en líneas de succión y descarga. Disco de acero inoxidable, asiento elastomérico resistente a hidrocarburos. Palanca manual o actuador.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tank","Cisternas"],
-   specs:[["Tipo","Mariposa / Butterfly — wafer"],["Diámetros","3\" – 4\" – 6\" – 8\""],["Disco","Acero inoxidable 316"],["Asiento","EPDM / NBR"],["Actuación","Palanca manual / actuador neumático"],["Presión","PN 10 – PN 16"],["Conexión","Entre flanges ANSI 150#"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Válvula Mariposa tipo Wafer. Ref: DVV-WFR-011"},
-
-  {id:12, cat:"valvulas", sku:"DVV-BLL-012", badge:"", img:"", icon:"🔧",
-   name:"Llave de Pase Completo",
-   subtitle:"Paso total sin restricción — bola de acero",
-   desc:"Válvula de bola de paso completo (full bore) para líneas de proceso. Sin restricción de flujo en posición abierta. Ideal para líneas de alta velocidad de flujo en equipos vacuum.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tanks","Sistemas de tubería"],
-   specs:[["Tipo","Válvula de bola — paso completo"],["Diámetros","1\" – 1.5\" – 2\" – 3\" – 4\""],["Material Cuerpo","Acero carbono / inoxidable 316"],["Bola","Acero inox. 316 cromada"],["Asiento","PTFE reforzado"],["Presión","PN 16 – PN 40"],["Actuación","Palanca manual"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Llave de Pase Completo. Ref: DVV-BLL-012"},
-
-  // ═══ MEDICIÓN E INSTRUMENTACIÓN ═══
-  {id:14, cat:"medicion", sku:"DVI-VCM-014", badge:"", img:"", icon:"📊",
-   name:"Vacuómetro −30 / +30",
-   subtitle:"Medición de vacío y presión — escala doble",
-   desc:"Vacuómetro / manómetro compuesto con escala de −30 inHg a +30 PSI (o equivalente en bar). Esfera de 2.5\" o 4\" con glicerina para amortiguación de vibraciones en campo. Ideal para monitoreo del sistema de vacío y presión.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","JUROP RV360","FAN 420","SuperVacuum"],
-   specs:[["Tipo","Vacuómetro compuesto (vacío + presión)"],["Escala","-30 inHg a +30 PSI / -1 a +2 bar"],["Esfera","2.5\" o 4\" (63 o 100 mm)"],["Relleno","Glicerina al 100%"],["Conexión","1/4\" NPT macho posterior"],["Material Cuerpo","Acero inox. / Latón"],["Precisión","Clase 1.6%"],["Temperatura","−20°C a +60°C"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Vacuómetros -30/+30. Ref: DVI-VCM-014"},
-
-  {id:17, cat:"medicion", sku:"DVI-VIS-017", badge:"", img:"", icon:"📊",
-   name:"Visor de Llenado",
-   subtitle:"Indicación visual del nivel en tiempo real",
-   desc:"Visor de nivel tipo sight glass para indicación visual del llenado del tanque durante la operación. Cristal templado resistente a hidrocarburos. Con protección metálica y empaque de sellado.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tanks","Cisternas","Tanques estacionarios"],
-   specs:[["Tipo","Sight glass / visor de nivel"],["Cristal","Templado borosilicato"],["Diámetro Visible","1\" – 1.5\" – 2\""],["Material Marco","Acero carbono / inoxidable"],["Empaque","PTFE / Grafito"],["Presión Máx.","10 bar"],["Temperatura","Hasta 120°C"],["Protección","Guarda metálica lateral"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Visores de Llenado para tanque. Ref: DVI-VIS-017"},
-
-  // ═══ MECANISMO DE SEGURIDAD ═══
-  {id:15, cat:"seguridad", sku:"DVS-ESF-015", badge:"", img:"", icon:"🔴",
-   name:"Esfera para Mecanismo de Seguridad",
-   subtitle:"Flotador de corte automático — anti-rebose",
-   desc:"Esfera flotante de neoprene o acero inoxidable para el mecanismo de seguridad del tanque vacuum. Al alcanzar el nivel máximo, la esfera cierra automáticamente la válvula de vacío evitando el rebose del producto hacia la bomba.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Sistemas de vacío con corte automático"],
-   specs:[["Función","Flotador de corte automático (anti-rebose)"],["Material","Neoprene / Acero inox. / PVC"],["Diámetro","3\" – 4\" – 5\" (según modelo)"],["Densidad","Flotación calibrada para HC"],["Temperatura","−20°C a +80°C"],["Compatibilidad","Hidrocarburos, agua, lodos"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Esfera para Mecanismo de Seguridad. Ref: DVS-ESF-015"},
-
-  {id:16, cat:"seguridad", sku:"DVS-TGM-016", badge:"", img:"", icon:"🔴",
-   name:"Tope de Goma para Esfera",
-   subtitle:"Asiento de sellado del mecanismo anti-rebose",
-   desc:"Tope de goma (asiento elastomérico) para la esfera del mecanismo de seguridad anti-rebose. Garantiza el sellado hermético cuando la esfera flotante cierra el paso de vacío. Pieza de desgaste de reemplazo periódico.",
-   compat:["Mecanismo de Seguridad Anti-rebose","Tanque Vacuum MDV-DV","MDV-DV2"],
-   specs:[["Material","EPDM / NBR / Neoprene"],["Diámetro","Según diámetro de la esfera"],["Función","Asiento sellante del mecanismo"],["Temperatura","−20°C a +100°C"],["Compatibilidad","Hidrocarburos y agua"],["Clasificación","Pieza de desgaste — reemplazo periódico"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Topes de Goma para Esfera. Ref: DVS-TGM-016"},
-
-  {id:20, cat:"seguridad", sku:"DVS-LED-020", badge:"new", img:"", icon:"💡",
-   name:"Sistema de Luces Estróber Tipo LED",
-   subtitle:"Señalización y seguridad vial activa",
-   desc:"Sistema de luces estróber tipo LED para señalización de seguridad en vehículos de transporte de residuos industriales. Alta visibilidad, bajo consumo energético y resistencia a vibraciones. Cumple normativas viales.",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Camiones vacuum","Vehículos industriales"],
-   specs:[["Tipo","Estróber LED"],["Color","Ámbar / Azul / Rojo (a pedir)"],["Voltaje","12V / 24V DC"],["Potencia","15 – 45W según modelo"],["Protección","IP67 — resistente a agua y polvo"],["Modos Flash","Múltiples patrones"],["Temperatura","−40°C a +70°C"],["Montaje","Magnético / Tornillos"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Sistema de Luces Estróber LED. Ref: DVS-LED-020"},
-
-  // ═══ BOCAS DE VISITA Y HERRAJES (continuación) ═══
-  {id:21, cat:"bocas", sku:"DVB-EMP-021", badge:"", img:"", icon:"🔲",
-   name:"Empacadura para Boca de Visita",
-   subtitle:"Sellado hermético — EPDM / Neoprene",
-   desc:"Empacadura de sellado para boca de visita de tanques vacuum, cisternas y frac tanks. Material EPDM o Neoprene resistente a hidrocarburos, vapores y temperaturas extremas. Disponible para bocas de 21\" y 30\".",
-   compat:["Boca de Visita 21\"","Boca de Visita 30\"","Tanque Vacuum MDV-DV","Frac Tank"],
-   specs:[["Material","EPDM / Neoprene"],["Diámetros","21\" y 30\""],["Espesor","6mm – 10mm"],["Temperatura","−30°C a +120°C"],["Compatibilidad","Hidrocarburos, agua, vapor"],["Dureza Shore","60 – 70 Shore A"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Empacaduras para Boca de Visita. Ref: DVB-EMP-021"},
-
-  {id:22, cat:"bocas", sku:"DVB-HRJ-022", badge:"", img:"", icon:"🔲",
-   name:"Herrajes para Bocas de Visita",
-   subtitle:"Pernos, tuercas y bisagras de repuesto",
-   desc:"Set completo de herrajes para bocas de visita: pernos de mariposa, tuercas de acero inoxidable, bisagras de reemplazo y tornillos de cierre. Disponibles para bocas de 21\" y 30\".",
-   compat:["Boca de Visita 21\"","Boca de Visita 30\"","Tanque Vacuum MDV-DV","Frac Tank"],
-   specs:[["Contenido","Pernos mariposa + tuercas + bisagras"],["Material","Acero inoxidable 304 / 316"],["Tamaño Pernos","M16 – M20"],["Diámetros","21\" y 30\""],["Cantidad","Kit completo por boca"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Herrajes para Bocas de Visita. Ref: DVB-HRJ-022"},
-
-  // ═══ MANGUERAS Y ACOPLES ═══
-  {id:18, cat:"mangueras", sku:"DVH-SHC-018", badge:"", img:"", icon:"🔄",
-   name:"Manguera Succión y Descarga Hidrocarburos",
-   subtitle:"Resistente a HC · media y alta presión",
-   desc:"Manguera industrial para succión y descarga de hidrocarburos (crudo, combustible, derivados). Diseñada para trabajo bajo vacío y presión. Refuerzo en espiral de acero. Disponible en 3\", 4\" y 6\".",
-   compat:["Tanque Vacuum MDV-DV","MDV-DV2","Frac Tanks","Camiones vacuum"],
-   specs:[["Aplicación","Succión y descarga de hidrocarburos"],["Diámetros","3\" – 4\" – 6\""],["Refuerzo","Espiral de acero inoxidable"],["Interior","EPDM / Nitrilo resistente a HC"],["Exterior","Neoprene negro resistente a abrasión"],["Vacío Máx.","−0.95 bar"],["Presión Trabajo","10 – 20 bar"],["Temperatura","−20°C a +80°C"],["Venta","Por metro lineal o rollo"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Manguera Succión y Descarga Hidrocarburos. Ref: DVH-SHC-018"},
-
-  {id:19, cat:"mangueras", sku:"DVH-CFB-019", badge:"", img:"", icon:"🔄",
-   name:"Manguera Conexión Filtros y Bomba de Vacío",
-   subtitle:"Línea de vacío entre componentes",
-   desc:"Manguera flexible para la conexión entre filtros primario/secundario y la bomba de vacío. Diseñada para soportar presiones negativas sin colapso. Racores de conexión incluidos.",
-   compat:["Bomba FAN 420","JUROP RV360","Filtros primario y secundario"],
-   specs:[["Aplicación","Línea de vacío — entre filtros y bomba"],["Diámetros","1.5\" – 2\" – 3\""],["Refuerzo","Espiral interno anti-colapso"],["Vacío Máx.","−0.98 bar"],["Interior","EPDM / NBR"],["Temperatura","−20°C a +80°C"],["Racores","NPT o camlock (a pedir)"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Manguera para conexión Filtros-Bomba. Ref: DVH-CFB-019"},
-
-  {id:30, cat:"mangueras", sku:"DVH-PIR-030", badge:"", img:"", icon:"🔄",
-   name:"Manguera para Alcantarillado Piranha",
-   subtitle:"Alta resistencia a la abrasión — servicio pesado",
-   desc:"Manguera tipo Piranha de alta resistencia para trabajo en sistemas de alcantarillado, limpieza de pozos y manejo de lodos abrasivos. Refuerzo múltiple para máxima durabilidad en condiciones extremas.",
-   compat:["Camiones vacuum de alcantarillado","Equipos de limpieza de redes","SuperVacuum"],
-   specs:[["Tipo","Piranha / Crusher — alta abrasión"],["Diámetros","3\" – 4\" – 6\""],["Refuerzo","Espiral metálica múltiple"],["Interior","Caucho natural / SBR extra duro"],["Presión Trabajo","8 – 15 bar"],["Vacío","Hasta −0.95 bar"],["Temperatura","−15°C a +70°C"],["Aplicación","Alcantarillado, lodos, arenas"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Manguera para Alcantarillado Piranha. Ref: DVH-PIR-030"},
-
-  {id:31, cat:"mangueras", sku:"DVH-BSM-031", badge:"", img:"", icon:"🔄",
-   name:"Manguera Succión Boom Alto Vacío Mixto",
-   subtitle:"Para sistemas combinados vacío/presión",
-   desc:"Manguera de succión para boom de alto vacío mixto. Diseñada para sistemas que operan tanto en vacío como en presión positiva. Alta flexibilidad para manejo con boom articulado en equipos supersucker.",
-   compat:["SuperVacuum / Supersucker","Equipos de alto vacío","Sistemas boom articulado"],
-   specs:[["Aplicación","Boom de alto vacío mixto"],["Diámetros","4\" – 5\" – 6\""],["Presión Trabajo","−1 bar a +8 bar"],["Refuerzo","Espiral de acero de alta resistencia"],["Flexibilidad","Radio de curvatura mínimo reducido"],["Temperatura","−30°C a +90°C"],["Acople","Camlock tipo C o D"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Manguera Succión Boom Alto Vacío Mixto. Ref: DVH-BSM-031"},
-
-  {id:33, cat:"mangueras", sku:"DVH-CAM-033", badge:"", img:"", icon:"🔄",
-   name:"Acoples Tipo Camlock para Mangueras",
-   subtitle:"Conexión rápida — MIL-C-27487 / DIN 2828",
-   desc:"Acoples de conexión rápida tipo Camlock (Cam & Groove) para mangueras industriales. Disponibles en aluminio, acero inoxidable y latón. Tipos A, B, C, D, E, F, DC, DP según aplicación.",
-   compat:["Mangueras de vacío y presión","Sistemas de carga y descarga","Frac Tanks","Cisternas"],
-   specs:[["Tipo","Camlock / Cam & Groove"],["Norma","MIL-C-27487 / DIN 2828"],["Materiales","Aluminio / Acero inox. / Latón"],["Tamaños","1\" – 1.5\" – 2\" – 3\" – 4\" – 6\""],["Tipos","A, B, C, D, E, F, DC, DP"],["Presión","Según material y tamaño"],["Empaque","NBR / EPDM / PTFE"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Acoples Camlock. Ref: DVH-CAM-033"},
-
-  // ═══ KITS DE REPARACIÓN ═══
-  {id:24, cat:"kits", sku:"DVK-BP-024", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — Battioni Pagani",
-   subtitle:"Repuestos internos OEM para bomba",
-   desc:"Kit completo de reparación y reconstrucción para bombas de vacío marca Battioni Pagani. Incluye paletas, rodamientos, sellos, juntas y retenes internos. Restituye el rendimiento original de la bomba.",
-   compat:["Bombas Battioni Pagani — todos los modelos"],
-   specs:[["Marca","Battioni Pagani"],["Contenido","Paletas, rodamientos, sellos, juntas"],["Tipo","Kit de reconstrucción completo"],["Compatibilidad","Consultar modelo de bomba"],["Calidad","OEM / equivalente de alta calidad"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación Battioni Pagani. Ref: DVK-BP-024"},
-
-  {id:25, cat:"kits", sku:"DVK-JRP-025", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — JUROP",
-   subtitle:"Repuestos internos para serie JUROP",
-   desc:"Kit de reparación y mantenimiento para bombas de vacío JUROP. Paletas de grafito, retenes, o-rings, rodamientos y juntas de tapa. Incluye instrucciones de servicio.",
-   compat:["Bombas JUROP RV360","JUROP PN","JUROP PD","Serie JUROP LC"],
-   specs:[["Marca","JUROP"],["Contenido","Paletas grafito, retenes, o-rings, rodamientos"],["Tipo","Kit de reconstrucción"],["Compatible","RV, PN, PD, LC series"],["Calidad","OEM italiano"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación JUROP. Ref: DVK-JRP-025"},
-
-  {id:26, cat:"kits", sku:"DVK-MK-026", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — MORO KAISER",
-   subtitle:"Repuestos internos para bomba MORO KAISER",
-   desc:"Kit de reparación para bombas de vacío MORO KAISER. Incluye paletas, rodamientos de precisión, sellos de eje y juntas de cierre para restituir el vacío y caudal originales.",
-   compat:["Bombas MORO KAISER — todos los modelos"],
-   specs:[["Marca","MORO KAISER"],["Contenido","Paletas, rodamientos, sellos de eje, juntas"],["Tipo","Kit de reconstrucción completo"],["Compatibilidad","Consultar modelo de bomba"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación MORO KAISER. Ref: DVK-MK-026"},
-
-  {id:27, cat:"kits", sku:"DVK-MSP-027", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — MASPORT",
-   subtitle:"Repuestos internos para bomba MASPORT",
-   desc:"Kit completo para reparación de bombas de vacío MASPORT. Paletas de grafito, rodamientos, platos de desgaste y juntas de cierre. Compatible con las series HXL, HXL4, WPO y DPO.",
-   compat:["MASPORT HXL","MASPORT HXL4","MASPORT WPO","MASPORT DPO"],
-   specs:[["Marca","MASPORT"],["Contenido","Paletas grafito, rodamientos, platos, juntas"],["Series Compatible","HXL, HXL4, WPO, DPO"],["Tipo","Kit de reconstrucción"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación MASPORT. Ref: DVK-MSP-027"},
-
-  {id:28, cat:"kits", sku:"DVK-NVE-028", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — NVE Challenger",
-   subtitle:"Repuestos internos para bomba NVE",
-   desc:"Kit de reparación para bombas de vacío NVE Challenger. Incluye los componentes internos de desgaste: paletas, rodamientos, sellos y empaques de tapa. Extiende la vida útil de la bomba.",
-   compat:["NVE Challenger — todos los modelos"],
-   specs:[["Marca","NVE Challenger"],["Contenido","Paletas, rodamientos, sellos, empaques tapa"],["Tipo","Kit de reconstrucción"],["Compatibilidad","Consultar modelo de bomba"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación NVE Challenger. Ref: DVK-NVE-028"},
-
-  {id:29, cat:"kits", sku:"DVK-FRT-029", badge:"", img:"", icon:"🧰",
-   name:"Kit de Reparación — Fruitland",
-   subtitle:"Repuestos internos para bomba Fruitland",
-   desc:"Kit de reparación para bombas de vacío Fruitland (fabricación canadiense). Paletas de grafito de alta resistencia, rodamientos, retenes y juntas. Compatible con toda la línea RCF.",
-   compat:["Fruitland RCF 350","Fruitland RCF 450","Fruitland RCF 550","Serie Fruitland RCF"],
-   specs:[["Marca","Fruitland (Canadá)"],["Contenido","Paletas grafito, rodamientos, retenes, juntas"],["Series Compatible","RCF 350, 450, 550, 750"],["Tipo","Kit de reconstrucción completo"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Kit de Reparación Fruitland. Ref: DVK-FRT-029"},
-
-  // ═══ CHASIS Y RODAJE ═══
-  {id:23, cat:"rodaje", sku:"DVR-TRD-023", badge:"", img:"", icon:"🏗️",
-   name:"Tren de Rodaje",
-   subtitle:"Sistema de rodamiento y suspensión del semirremolque",
-   desc:"Tren de rodaje completo para semirremolque y plataformas: ejes, suspensión, frenos y neumáticos. Disponible en configuración de 2 y 3 ejes. Piezas individuales o kit completo.",
-   compat:["Semirremolques vacuum","Frac Tanks","Plataformas","Low Boy"],
-   specs:[["Componentes","Ejes, suspensión, frenos, neumáticos"],["Configuración","2 ejes o 3 ejes"],["Suspensión","Mecánica / neumática"],["Frenos","Sistema neumático ABS compatible"],["Neumáticos","11R22.5 / 12R22.5 / 385/65R22.5"],["Piezas","Individuales o kit completo"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Tren de Rodaje. Ref: DVR-TRD-023"},
-
-  // ═══ ALTO VACÍO ESPECIALIZADO ═══
-  {id:32, cat:"altovacio", sku:"DVA-HVP-032", badge:"", img:"", icon:"⚡",
-   name:"Piezas y Partes — Alto Vacío Industrial",
-   subtitle:"Guzzler · Supersucker · GapVax",
-   desc:"Repuestos y partes para equipos de alto vacío industrial de las marcas Guzzler, Supersucker y GapVax. Componentes de bomba, válvulas especiales, mangueras de alta presión, filtros y sellos específicos para estos sistemas de alta capacidad.",
-   compat:["Guzzler Combination Units","Supersucker","GapVax","Equipos de alto vacío industrial"],
-   specs:[["Marcas","Guzzler, Supersucker, GapVax"],["Tipo Piezas","Bomba, válvulas, filtros, mangueras, sellos"],["Capacidad Equipos","Alta vacío — 27\" Hg o más"],["Fluido","Agua, lodos, hidrocarburos, materiales secos"],["Especificación","Consultar modelo y año del equipo"],["Disponibilidad","A pedido — consultar stock"]],
-   manualUrl:"",
-   waMsg:"Hola DIVICA, necesito cotizar Piezas para Equipo de Alto Vacío (Guzzler/Supersucker/GapVax). Ref: DVA-HVP-032"},
+  {
+    "id": 1,
+    "cat": "bombas",
+    "sku": "DVB-FAN420-001",
+    "badge": "",
+    "img": "https://cdn11.bigcommerce.com/s-rsvmdxl/images/stencil/640w/products/75190/118711/FAN420CWNF__29601.1720444854.jpg?c=2",
+    "imgs": [
+      "https://cdn11.bigcommerce.com/s-rsvmdxl/images/stencil/640w/products/75190/118711/FAN420CWNF__29601.1720444854.jpg?c=2"
+    ],
+    "icon": "⚙️",
+    "name": "Battioni Pagani FAN",
+    "subtitle": "Bomba de vacio",
+    "desc": "Bomba de vacio modelo FAN 420 / FAN 530. Ideal para tanques vacuum de 160 bls y 230 bls.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "Tanque Vacuum MDV-DV2"
+    ],
+    "specs": [
+      [
+        "Modelo",
+        "FAN 420"
+      ],
+      [
+        "Tipo",
+        "Bomba de vacio"
+      ],
+      [
+        "Capacidad",
+        "420 CFM"
+      ],
+      [
+        "Vacío Máximo",
+        "−0.90 bar / −27 inHg"
+      ],
+      [
+        "Peso",
+        "85 – 95 kg"
+      ]
+    ],
+    "manualUrl": "https://www.mdivica.com/s/MANTENIMIENTO-PREVENTIVO-BOMBA-DE-VACIO-FAN-420.pdf",
+    "waMsg": "Hola DIVICA, necesito cotizar la Bomba de Vacío FAN 420. Ref: DVB-FAN420-001"
+  },
+  {
+    "id": 2,
+    "cat": "bombas",
+    "sku": "DVB-JRP360-002",
+    "badge": "new",
+    "img": "https://store.pikrite.com/cdn/shop/files/Pik-Rite-RV360-Image1_7dd1893b-1db1-4d7c-a032-7dcc13303a87_1200x.jpg?v=1715822116",
+    "imgs": [
+      "https://store.pikrite.com/cdn/shop/files/Pik-Rite-RV360-Image1_7dd1893b-1db1-4d7c-a032-7dcc13303a87_1200x.jpg?v=1715822116"
+    ],
+    "icon": "⚙️",
+    "name": "JUROP RV360",
+    "subtitle": "Bomba de vacio",
+    "desc": "Bomba de vacio JUROP RV360. Made in Italy. Ideal para tanques vacuum con capacidad de 160 bls y 230 bls",
+    "compat": [
+      "Tanque vacuum 160 bls",
+      "Tanque vacuum 230 Bls"
+    ],
+    "specs": [
+      [
+        "Marca",
+        "JUROP"
+      ],
+      [
+        "Modelo",
+        "RV360"
+      ],
+      [
+        "Tipo",
+        "Bomba de vacio"
+      ],
+      [
+        "Desplazamiento",
+        "377 CFM"
+      ],
+      [
+        "Vacío Máximo",
+        "−0.90 bar / −27 inHg"
+      ],
+      [
+        "Peso",
+        "Aprox. 85 kg"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar la Bomba JUROP RV360. Ref: DVB-JRP360-002"
+  },
+  {
+    "id": 3,
+    "cat": "motor",
+    "sku": "DVM-DSL-003",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/f85906bb-1d72-4e08-91bc-434757344941/IMG_3630.JPEG?content-type=image%2Fjpeg",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/f85906bb-1d72-4e08-91bc-434757344941/IMG_3630.JPEG?content-type=image%2Fjpeg",
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/308c2b0f-f125-4dcd-bef1-79253efa1614/IMG_8203.JPG?content-type=image%2Fjpeg"
+    ],
+    "icon": "🔩",
+    "name": "Motor diesel",
+    "subtitle": "ISUZU, DEUTZ, VM MOTORI",
+    "desc": "Motor diesel para accionar la bomba de vacío de forma independiente mediante acople directo, con correas o croche. Disponible en diferentes potencias según la aplicación y el modelo de bomba.",
+    "compat": [
+      "ISUZU",
+      "DEUTZ",
+      "VM MOTORI"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Motor diesel 3 o 4 cilindros"
+      ],
+      [
+        "Potencia",
+        "Hasta 90 HP"
+      ],
+      [
+        "Arranque",
+        "Eléctrico 12/24V"
+      ],
+      [
+        "Combustible",
+        "Diesel"
+      ],
+      [
+        "Refrigeración",
+        "Agua o aire"
+      ],
+      [
+        "Norma",
+        "EPA / Tier 4"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar un Motor Diesel para bomba de vacío. Ref: DVM-DSL-003"
+  },
+  {
+    "id": 4,
+    "cat": "bocas",
+    "sku": "DVB-BV21-004",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/products/1010-0020_21in_Manway_74e8bc2f-0727-45a9-b7c6-965686d63f32.jpg?v=1625760172",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/products/1010-0020_21in_Manway_74e8bc2f-0727-45a9-b7c6-965686d63f32.jpg?v=1625760172"
+    ],
+    "icon": "🔲",
+    "name": "Boca de Visita 21\"",
+    "subtitle": "Acceso al tanque — cierre hermético",
+    "desc": "Boca de visita de 21 pulgadas para acceso al interior del tanque vacuum o cisterna. Tapa de acero con cierre hermético y empaque resistente a hidrocarburos. Incluye bisagras y sistema de cierre.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Frac Tank",
+      "Cisternas"
+    ],
+    "specs": [
+      [
+        "Diámetro",
+        "21\" (533 mm)"
+      ],
+      [
+        "Material",
+        "Acero A-36 / ASTM"
+      ],
+      [
+        "Empaque",
+        "EPDM / Neoprene"
+      ],
+      [
+        "Cierre",
+        "Pernos de mariposa"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Boca de Visita 21\". Ref: DVB-BV21-004"
+  },
+  {
+    "id": 5,
+    "cat": "bocas",
+    "sku": "DVB-BV30-005",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/files/1012-0000_36in_Manway_d501ba30-42f4-4d9f-8df3-2e8363e802df-opt_940x.jpg?v=1742903919",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/files/1012-0000_36in_Manway_d501ba30-42f4-4d9f-8df3-2e8363e802df-opt_940x.jpg?v=1742903919"
+    ],
+    "icon": "🔲",
+    "name": "Boca de Visita 30\"",
+    "subtitle": "Acceso limpieza e inspección",
+    "desc": "Boca de visita de 30 pulgadas para acceso al interior del tanque. Ideal para limpieza, inspección y mantenimiento interno. Cierre hermético con múltiples pernos.",
+    "compat": [
+      "Tanques vacuum",
+      "Frac tanks",
+      "Tanques estacionarios"
+    ],
+    "specs": [
+      [
+        "Diámetro",
+        "30\" (762 mm)"
+      ],
+      [
+        "Material",
+        "Acero A-36 / ASTM"
+      ],
+      [
+        "Empaque",
+        "EPDM / neoprene"
+      ],
+      [
+        "Cierre",
+        "Pernos de mariposa"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Boca de Visita 30\". Ref: DVB-BV30-005"
+  },
+  {
+    "id": 6,
+    "cat": "filtros",
+    "sku": "DVF-PRM-006",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/products/1010-0026-DP_20in_Primary_7ece52c9-40c8-4bb8-8b29-b0b849fa9e0b_940x.jpg?v=1625760196",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/products/1010-0026-DP_20in_Primary_7ece52c9-40c8-4bb8-8b29-b0b849fa9e0b_940x.jpg?v=1625760196"
+    ],
+    "icon": "🛡️",
+    "name": "Filtro Primario",
+    "subtitle": "Primer mecanismo de proteccion al tanque y conjunto de vacio",
+    "desc": "Filtro primario para el sistema de vacío. Primera barrera de protección que retiene sólidos gruesos y partículas de gran tamaño antes de que lleguen al sistema de filtración fino y a la bomba.",
+    "compat": [
+      "Bomba FAN 420",
+      "JUROP RV360",
+      "Sistemas de vacío industriales"
+    ],
+    "specs": [
+      [
+        "Posición",
+        "Entrada del sistema (pre-filtro)"
+      ],
+      [
+        "Material Cuerpo",
+        "Acero carbono / inoxidable"
+      ],
+      [
+        "Elemento Filtrante",
+        "Sistema de proteccion con ciclon, tope de goma y esfera en A/I"
+      ],
+      [
+        "Conexión",
+        "3\""
+      ],
+      [
+        "",
+        "550CFM"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Filtro Primario para sistema vacuum. Ref: DVF-PRM-006"
+  },
+  {
+    "id": 7,
+    "cat": "filtros",
+    "sku": "DVF-SEC-007",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/e08db00b-2b68-4b4f-816d-05cf5e6ed10b/2FF75F75-EB97-48E3-A565-AA839F02C4AF.PNG?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/e08db00b-2b68-4b4f-816d-05cf5e6ed10b/2FF75F75-EB97-48E3-A565-AA839F02C4AF.PNG?content-type=image%2Fpng"
+    ],
+    "icon": "🛡️",
+    "name": "Filtro Secundario",
+    "subtitle": "Segundo mecanismo de seguridad para el tanque y conjunto de vacio",
+    "desc": "Filtro secundario de alta eficiencia para el sistema de vacío. Filtra partículas finas y líquidos residuales que pasaron el filtro primario. Protección directa de la bomba de vacío.\nIncluye visor para visualizacion de llenado tipo pyrex. \n\nOPCIONAL: Valvulas de seguridad 1\" 1/2 para vacio y 2\" para sobrepresion",
+    "compat": [
+      "Bomba FAN 420",
+      "JUROP RV360",
+      "Sistemas de vacío industriales"
+    ],
+    "specs": [
+      [
+        "Posición",
+        "Línea directa a bomba"
+      ],
+      [
+        "Tipo",
+        "Ciclon, con tope de goma y esfera en A/I"
+      ],
+      [
+        "Material",
+        "Acero ASTM A36"
+      ],
+      [
+        "Conexión",
+        "3\" y drenaje en 1\""
+      ],
+      [
+        "Potencia",
+        "550CFM"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Filtro Secundario para sistema vacuum. Ref: DVF-SEC-007"
+  },
+  {
+    "id": 8,
+    "cat": "valvulas",
+    "sku": "DVV-VAC-008",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/files/MZBrassVaccumReliefValve-web_940x.jpg?v=1716307519",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/files/MZBrassVaccumReliefValve-web_940x.jpg?v=1716307519",
+      "https://www.morousa.com/wp-content/uploads/2024/01/RIV-1.5in-vacuum-relief-valve.webp"
+    ],
+    "icon": "🔧",
+    "name": "Valvula para vacio 1\" 1/2",
+    "subtitle": "Valvula para proteccion al vacio",
+    "desc": "Válvula especializada para el control y regulación del sistema de vacío. Permite el corte y apertura del flujo de vacío en el sistema. Fabricada en materiales resistentes a presiones negativas.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Sistemas de vacío industriales"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Válvula de vacío — corte"
+      ],
+      [
+        "Rango",
+        "hasta -18 hg"
+      ],
+      [
+        "Material Cuerpo",
+        "Bronce"
+      ],
+      [
+        "Conexión",
+        "1 1/2"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Válvula de Vacío. Ref: DVV-VAC-008"
+  },
+  {
+    "id": 9,
+    "cat": "valvulas",
+    "sku": "DVV-SBP-009",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/files/MZBrassPressureReliefValve_940x.jpg?v=1715634697",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/files/MZBrassPressureReliefValve_940x.jpg?v=1715634697",
+      "https://gloxco.com/wp-content/uploads/2019/09/1049-0000-RIV.jpg"
+    ],
+    "icon": "🔧",
+    "name": "Válvula de Sobrepresión 2\"",
+    "subtitle": "Valvula para proteccion a la sobrepresion",
+    "desc": "Válvula de seguridad contra sobrepresión para el tanque y el sistema de vacío. Se abre automáticamente al superar la presión de tarado para proteger el equipo.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Tanques estacionarios",
+      "Frac Tanks"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Válvula de alivio de presión"
+      ],
+      [
+        "Rango",
+        "hasta 30 psi"
+      ],
+      [
+        "Material",
+        "Bronce"
+      ],
+      [
+        "Conexión",
+        "2\""
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Válvula de Sobrepresión. Ref: DVV-SBP-009"
+  },
+  {
+    "id": 10,
+    "cat": "valvulas",
+    "sku": "DVV-CRD-010",
+    "badge": "",
+    "img": "https://cdn11.bigcommerce.com/s-rsvmdxl/images/stencil/640w/products/75728/121915/1041-0000RIV_1__83022.1726678689.jpg?c=2",
+    "imgs": [
+      "https://cdn11.bigcommerce.com/s-rsvmdxl/images/stencil/640w/products/75728/121915/1041-0000RIV_1__83022.1726678689.jpg?c=2",
+      "https://chandlervac.com/cdn/shop/files/2-Piece_2000_Stainless_Steel_Ball_Valve-opt_940x.jpg?v=1742916885",
+      "https://chandlervac.com/cdn/shop/files/FNPT_X_FNPT_Brass_Ball_Valve-opt_940x.jpg?v=1742926473"
+    ],
+    "icon": "🔧",
+    "name": "Válvula para Carga y Descarga 4\"",
+    "subtitle": "Control de flujo para el tanque o cisterna",
+    "desc": "Válvula de carga y descarga para el control del flujo del producto. Permite la operación de llenado y vaciado del tanque. Disponible en diferentes modelos; valvula de compuerta o llave de bola.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Cisternas"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Llave de bola / Compuerta"
+      ],
+      [
+        "Diámetros",
+        "4"
+      ],
+      [
+        "Material",
+        "Bronce o acero"
+      ],
+      [
+        "Asiento",
+        "EPDM / NBR / PTFE"
+      ],
+      [
+        "Operación",
+        "Manual (neumatica bajo pedido)"
+      ],
+      [
+        "Presión",
+        "200psi"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Válvula de Carga y Descarga. Ref: DVV-CRD-010"
+  },
+  {
+    "id": 11,
+    "cat": "valvulas",
+    "sku": "DVV-WFR-011",
+    "badge": "",
+    "img": "https://www.austinhose.com/ecomm_images/items/large/bf-ln200-series-wafer-bf-01.jpg",
+    "imgs": [
+      "https://www.austinhose.com/ecomm_images/items/large/bf-ln200-series-wafer-bf-01.jpg",
+      "https://www.zoro.com/static/cms/product/large/Z2w1B_jcpEx_.JPG"
+    ],
+    "icon": "🔧",
+    "name": "Válvula Mariposa Tipo Wafer",
+    "subtitle": "Valvula mariposa para diferentes aplicaciones",
+    "desc": "Válvula mariposa tipo wafer para montaje entre flanges en líneas. Disco en acero, acero inoxidable, asiento en EPDM. Palanca manual.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Frac Tank",
+      "Cisternas"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Mariposa / Butterfly — wafer"
+      ],
+      [
+        "Diámetros",
+        "2 a 6 pulgadas"
+      ],
+      [
+        "Disco",
+        "Acero / Acero inoxidable 316"
+      ],
+      [
+        "Asiento",
+        "EPDM / NBR"
+      ],
+      [
+        "Actuación",
+        "Palanca manual"
+      ],
+      [
+        "Conexión",
+        "ANSI 150#"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Válvula Mariposa tipo Wafer. Ref: DVV-WFR-011"
+  },
+  {
+    "id": 12,
+    "cat": "valvulas",
+    "sku": "DVV-BLL-012",
+    "badge": "",
+    "img": "https://shop.prmfiltration.com/cdn/shop/files/ssbv100fpx1_6c9b407f-ea8d-4dd7-85e2-238cead9bca3.jpg?v=1742930067",
+    "imgs": [
+      "https://shop.prmfiltration.com/cdn/shop/files/ssbv100fpx1_6c9b407f-ea8d-4dd7-85e2-238cead9bca3.jpg?v=1742930067"
+    ],
+    "icon": "🔧",
+    "name": "Llave de bola",
+    "subtitle": "llave de paso para diferentes aplicaciones",
+    "desc": "Válvula de bola de paso completo (full bore) para líneas de proceso. Ideal para líneas de flujo en equipos vacuum u otras aplicaciones",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Frac Tanks",
+      "Sistemas de tubería"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Válvula de bola — paso completo"
+      ],
+      [
+        "Diámetros",
+        "de 3/4 a 4 pulgadas"
+      ],
+      [
+        "Material Cuerpo",
+        "Acero / bronce"
+      ],
+      [
+        "Bola",
+        "Acero inox. 316 cromada"
+      ],
+      [
+        "Asiento",
+        "PTFE reforzado"
+      ],
+      [
+        "Actuación",
+        "Palanca manual"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Llave de Pase Completo. Ref: DVV-BLL-012"
+  },
+  {
+    "id": 13,
+    "cat": "filtros",
+    "sku": "DVF-AIR-013",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/088878d1-6bb5-47b6-a599-36d68ea03fe0/E6D02D42-FBFE-4F2A-BFEA-71E14AE8BC2C.PNG?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/088878d1-6bb5-47b6-a599-36d68ea03fe0/E6D02D42-FBFE-4F2A-BFEA-71E14AE8BC2C.PNG?content-type=image%2Fpng"
+    ],
+    "icon": "🛡️",
+    "name": "Filtro de Admisión / Aire",
+    "subtitle": "Filtración de aire / admision para proteccion a la bomba de vacio",
+    "desc": "Filtro de admisión de aire y aspiracion de la bomba de vacío. Elemento filtrante de alta capacidad para proteccion al sistema de vacio. Con puerto para drenaje",
+    "compat": [
+      "Bomba FAN 420",
+      "JUROP RV360"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Filtro con cartucho reemplazable"
+      ],
+      [
+        "Eficiencia",
+        "99.9% partículas >10μ"
+      ],
+      [
+        "Diámetro",
+        "3\" estandar"
+      ],
+      [
+        "Material",
+        "Acero ASTM A36"
+      ],
+      [
+        "Intervalo Cambio",
+        "Cada 500 horas o por obstrucción"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Filtro de Admisión / Aire. Ref: DVF-AIR-013"
+  },
+  {
+    "id": 14,
+    "cat": "medicion",
+    "sku": "DVI-VCM-014",
+    "badge": "",
+    "img": "https://store.pikrite.com/cdn/shop/products/Pik-Rite-VPG-250-4L_700x.jpg?v=1686926755",
+    "imgs": [
+      "https://store.pikrite.com/cdn/shop/products/Pik-Rite-VPG-250-4L_700x.jpg?v=1686926755"
+    ],
+    "icon": "📊",
+    "name": "Vacuómetro −30 / +30",
+    "subtitle": "Medición de vacío y presión",
+    "desc": "Vacuómetro / manómetro compuesto con escala de −30 inHg a +30 PSI. Cuerpo de 2.5\" . Con glicerina. Ideal para monitoreo del sistema de vacío y presión.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "JUROP RV360",
+      "FAN 420"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Vacuómetro compuesto (vacío + presión)"
+      ],
+      [
+        "Escala",
+        "-30 inHg a +30 PSI"
+      ],
+      [
+        "Cuerpo",
+        "2.5\" o 4\" (63 o 100 mm)"
+      ],
+      [
+        "Relleno",
+        "Glicerina"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Vacuómetros -30/+30. Ref: DVI-VCM-014"
+  },
+  {
+    "id": 15,
+    "cat": "seguridad",
+    "sku": "DVS-ESF-015",
+    "badge": "",
+    "img": "https://www.steelsupplylp.com/uploads/product/Hollow-steel-sphere-6-inch.jpg",
+    "imgs": [
+      "https://www.steelsupplylp.com/uploads/product/Hollow-steel-sphere-6-inch.jpg"
+    ],
+    "icon": "🔴",
+    "name": "Esfera para Mecanismo de Seguridad",
+    "subtitle": "Esfera para mecanismos de seguridad (filtro primario y secundario)",
+    "desc": "Esfera flotante en acero inoxidable para los mecanismos de seguridad del tanque vacuum. Al alcanzar el nivel máximo, la esfera cierra automáticamente el filtro evitando el rebose del producto hacia la bomba.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2"
+    ],
+    "specs": [
+      [
+        "Función",
+        "Flotador de corte automático (anti-rebose)"
+      ],
+      [
+        "Material",
+        "Acero inoxidable"
+      ],
+      [
+        "Diámetro",
+        "6 pulgadas"
+      ],
+      [
+        "Compatibilidad",
+        "Funciona para cualquier filtro con ciclon interno"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Esfera para Mecanismo de Seguridad. Ref: DVS-ESF-015"
+  },
+  {
+    "id": 16,
+    "cat": "seguridad",
+    "sku": "DVS-TGM-016",
+    "badge": "",
+    "img": "https://store.pikrite.com/cdn/shop/files/PRIA-0003_e6f65fbe-5579-4a82-b112-14d68d02cba9_700x.jpg?v=1688478136",
+    "imgs": [
+      "https://store.pikrite.com/cdn/shop/files/PRIA-0003_e6f65fbe-5579-4a82-b112-14d68d02cba9_700x.jpg?v=1688478136"
+    ],
+    "icon": "🔴",
+    "name": "Tope de Goma para Esfera",
+    "subtitle": "Asiento de sellado para filtro primario y secundario",
+    "desc": "Tope de goma (asiento elastomérico) para la esfera del mecanismo de seguridad anti-rebose. Garantiza el sellado hermético cuando la esfera flotante cierra el paso de vacío. Pieza de desgaste de reemplazo periódico.",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2"
+    ],
+    "specs": [
+      [
+        "Material",
+        "EPDM"
+      ],
+      [
+        "Diámetro",
+        "4 pulgadas"
+      ],
+      [
+        "Función",
+        "Asiento sellante del mecanismo"
+      ],
+      [
+        "Compatibilidad",
+        "Para cualquier filtro con ciclon interno"
+      ],
+      [
+        "Clasificación",
+        "Pieza de desgaste — reemplazo periódico"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Topes de Goma para Esfera. Ref: DVS-TGM-016"
+  },
+  {
+    "id": 17,
+    "cat": "medicion",
+    "sku": "DVI-VIS-017",
+    "badge": "",
+    "img": "https://store.pikrite.com/cdn/shop/files/SE-5_1cf47369-fdf6-4ed8-9c60-6aaca2f653be_700x.jpg?v=1688477855",
+    "imgs": [
+      "https://store.pikrite.com/cdn/shop/files/SE-5_1cf47369-fdf6-4ed8-9c60-6aaca2f653be_700x.jpg?v=1688477855",
+      "https://chandlervac.com/cdn/shop/files/20220503-DSC08227-opt_940x.jpg?v=1742844215",
+      "https://chandlervac.com/cdn/shop/files/20220503-DSC08241-opt_940x.jpg?v=1742901029",
+      "https://chandlervac.com/cdn/shop/products/1092-0004_400x400_ea745bdd-e4d9-475a-afdf-c4c5bde9e1e2.jpg?v=1659381227",
+      "https://eamparts.com/cdn/shop/products/CHA-1083-0000.png?v=1672844679&width=480"
+    ],
+    "icon": "📊",
+    "name": "Visor de Llenado",
+    "subtitle": "Indicación visual del nivel",
+    "desc": "Visor de nivel tipo sight glass para indicación visual del llenado del tanque durante la operación. Cristal templado tipo pyrex resistente a hidrocarburos. Con protección metálica y empaque de sellado.\n\nIncluye \n-Base de hierro \n-Mariposa para apretar\n- Laina\n-Empacadura\n-Copa de vidrio pyrex",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Frac Tanks",
+      "Cisternas",
+      "Tanques estacionarios"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Sight glass / visor de nivel"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Visores de Llenado para tanque. Ref: DVI-VIS-017"
+  },
+  {
+    "id": 18,
+    "cat": "mangueras",
+    "sku": "DVH-SHC-018",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/22d74a97-8524-4706-bc27-4db304c38d91/e2bdfbce-13af-45d6-b909-dcbe4f480a76.png?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/22d74a97-8524-4706-bc27-4db304c38d91/e2bdfbce-13af-45d6-b909-dcbe4f480a76.png?content-type=image%2Fpng",
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/8d037f40-a3f7-4c64-9657-1f259ea0bb0e/ffda6c44-0a84-499e-bf35-4a1d6b6a8410.png?content-type=image%2Fpng"
+    ],
+    "icon": "🔄",
+    "name": "Manguera Succión y Descarga Hidrocarburos",
+    "subtitle": "Ideal para trabajo pesado en equipos vacuums o diferentes aplicaciones",
+    "desc": "Manguera industrial para succión y descarga de hidrocarburos (crudo, combustible, derivados). Diseñada para trabajo bajo vacío y presión. Refuerzo en espiral de acero. Disponible en 3\", 4\" y 6\".",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Frac Tanks",
+      "Camiones vacuum"
+    ],
+    "specs": [
+      [
+        "Aplicación",
+        "Succión y descarga de hidrocarburos"
+      ],
+      [
+        "Diámetros",
+        "3, 4 y 6 pulgadas"
+      ],
+      [
+        "Refuerzo",
+        "Espiral de acero"
+      ],
+      [
+        "Exterior",
+        "Neoprene negro resistente a abrasión"
+      ],
+      [
+        "Presión Trabajo",
+        "200 psi"
+      ],
+      [
+        "Temperatura",
+        "−20°C a +80°C"
+      ],
+      [
+        "Venta",
+        "Por metro lineal o rollo"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Manguera Succión y Descarga Hidrocarburos. Ref: DVH-SHC-018"
+  },
+  {
+    "id": 19,
+    "cat": "mangueras",
+    "sku": "DVH-CFB-019",
+    "badge": "",
+    "img": "https://shopstutsmans.com/wp-content/uploads/2020/09/Eldon-C-Stutsman-Inc-Hose-Chemical-Petroleum-Tank-Truck-Petroleum-SandD.jpg",
+    "imgs": [
+      "https://shopstutsmans.com/wp-content/uploads/2020/09/Eldon-C-Stutsman-Inc-Hose-Chemical-Petroleum-Tank-Truck-Petroleum-SandD.jpg",
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/ed831c26-60d7-4f00-a1b7-3a3674b29001/6DC4933E-3046-4B60-8387-96E570A3AAE7.PNG?content-type=image%2Fpng"
+    ],
+    "icon": "🔄",
+    "name": "Manguera Conexión Filtros y Bomba de Vacío",
+    "subtitle": "Ideal para interconexion de filtros y bomba de vacio",
+    "desc": "Manguera flexible para la conexión entre filtros primario/secundario y la bomba de vacío. Diseñada para soportar presiones negativas sin colapso. Racores de conexión incluidos.",
+    "compat": [
+      "Bomba FAN 420",
+      "JUROP RV360",
+      "Filtros primario y secundario"
+    ],
+    "specs": [
+      [
+        "Diámetros",
+        "3 y 4 pulgadas"
+      ],
+      [
+        "Refuerzo",
+        "Espiral interno anti-colapso"
+      ],
+      [
+        "Temperatura",
+        "−20°C a +80°C"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Manguera para conexión Filtros-Bomba. Ref: DVH-CFB-019"
+  },
+  {
+    "id": 20,
+    "cat": "seguridad",
+    "sku": "DVS-LED-020",
+    "badge": "new",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/46309a71-a38a-435b-93c2-363b32183fd1/8E62F5FB-B144-4A7B-9D0F-A8AA71B53712.PNG?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/46309a71-a38a-435b-93c2-363b32183fd1/8E62F5FB-B144-4A7B-9D0F-A8AA71B53712.PNG?content-type=image%2Fpng"
+    ],
+    "icon": "💡",
+    "name": "Sistema de Luces Estróber Tipo LED",
+    "subtitle": "Señalización y seguridad vial activa",
+    "desc": "Sistema de luces estróber tipo LED para señalización de seguridad en vehículos de transporte de residuos industriales. Alta visibilidad, bajo consumo energético y resistencia a vibraciones. Cumple normativas viales.\n- Luces traseras (Stops, Cruces, retroceso)\n- Luces laterales \n- Faro explorador\n- Luces cocteleras tipo estrober superior",
+    "compat": [
+      "Tanque Vacuum MDV-DV",
+      "MDV-DV2",
+      "Camiones vacuum",
+      "Vehículos industriales"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Estróber LED"
+      ],
+      [
+        "Color",
+        "Ámbar / Azul / Rojo (a pedir)"
+      ],
+      [
+        "Voltaje",
+        "12V / 24V DC"
+      ],
+      [
+        "Protección",
+        "IP67 — resistente a agua y polvo"
+      ],
+      [
+        "Modos Flash",
+        "Múltiples patrones"
+      ],
+      [
+        "Montaje",
+        "Magnético / Tornillos"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Sistema de Luces Estróber LED. Ref: DVS-LED-020"
+  },
+  {
+    "id": 21,
+    "cat": "bocas",
+    "sku": "DVB-EMP-021",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/97dd6cce-8068-4f12-b3c1-8cb0c7fae9de/a62cc5dc-7ef9-4107-b082-2c2a5433bfd3.png?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/97dd6cce-8068-4f12-b3c1-8cb0c7fae9de/a62cc5dc-7ef9-4107-b082-2c2a5433bfd3.png?content-type=image%2Fpng"
+    ],
+    "icon": "🔲",
+    "name": "Empacadura para Boca de Visita",
+    "subtitle": "Sellado hermético",
+    "desc": "Empacadura de sellado para boca de visita de tanques vacuum, cisternas y frac tanks. Material Neoprene resistente a hidrocarburos, vapores y temperaturas extremas. Disponible para bocas de desde 21\" a 36\".",
+    "compat": [
+      "Boca de Visita 21\"",
+      "Boca de Visita 30\"",
+      "Tanque Vacuum MDV-DV",
+      "Frac Tank"
+    ],
+    "specs": [
+      [
+        "Material",
+        "Neoprene"
+      ],
+      [
+        "Diámetros",
+        "Segun requerimiento"
+      ],
+      [
+        "Espesor",
+        "1\""
+      ],
+      [
+        "Temperatura",
+        "−30°C a +120°C"
+      ],
+      [
+        "Compatibilidad",
+        "Hidrocarburos, agua, vapor"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Empacaduras para Boca de Visita. Ref: DVB-EMP-021"
+  },
+  {
+    "id": 22,
+    "cat": "bocas",
+    "sku": "DVB-HRJ-022",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/24809cc0-6000-4adf-b8fa-16d387b2ec49/31cba20f-4027-461f-8f8c-a0c88f700286.png?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/24809cc0-6000-4adf-b8fa-16d387b2ec49/31cba20f-4027-461f-8f8c-a0c88f700286.png?content-type=image%2Fpng"
+    ],
+    "icon": "🔲",
+    "name": "Herrajes para Bocas de Visita",
+    "subtitle": "Kit completo de remplazo para boca de visita",
+    "desc": "Set completo de herrajes para bocas de visita. Contiene punto de engrase para lubricacion del mismo. Para cualquier modelo y diametro de boca de visita",
+    "compat": [
+      "Boca de Visita 21\"",
+      "Boca de Visita 30\"",
+      "Tanque Vacuum MDV-DV",
+      "Frac Tank"
+    ],
+    "specs": [
+      [
+        "Contenido",
+        "Kit completo herraje"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Herrajes para Bocas de Visita. Ref: DVB-HRJ-022"
+  },
+  {
+    "id": 23,
+    "cat": "rodaje",
+    "sku": "DVR-TRD-023",
+    "badge": "",
+    "img": "https://cdn11.bigcommerce.com/s-2wzik2aols/images/stencil/1280x1280/products/2612/14080/12K-HDS-01_main__70426.1762900255.png?c=2",
+    "imgs": [
+      "https://cdn11.bigcommerce.com/s-2wzik2aols/images/stencil/1280x1280/products/2612/14080/12K-HDS-01_main__70426.1762900255.png?c=2"
+    ],
+    "icon": "🏗️",
+    "name": "Tren de Rodaje",
+    "subtitle": "Sistema de suspension, ejes y frenos para remolques y semi remolques",
+    "desc": "Tren de rodaje completo para semirremolque y plataformas: ejes, suspensión, frenos y neumáticos. Disponible en configuración de 2 y 3 ejes. Piezas individuales o kit completo.",
+    "compat": [
+      "Semirremolques vacuum",
+      "Frac Tanks",
+      "Plataformas",
+      "Low Boy"
+    ],
+    "specs": [
+      [
+        "Componentes",
+        "Ejes, suspensión, frenos, neumáticos"
+      ],
+      [
+        "Configuración",
+        "2 ejes o 3 ejes"
+      ],
+      [
+        "Piezas",
+        "Individuales o kit completo"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Tren de Rodaje. Ref: DVR-TRD-023"
+  },
+  {
+    "id": 24,
+    "cat": "kits",
+    "sku": "DVK-BP-024",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/files/FAN-420-rebuild-kit-web-1_940x.jpg?v=1711961087",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/files/FAN-420-rebuild-kit-web-1_940x.jpg?v=1711961087"
+    ],
+    "icon": "🧰",
+    "name": "Kit de Reparación — Battioni Pagani",
+    "subtitle": "Para bomba de vacio FAN 420 y FAN 530",
+    "desc": "Kit completo de reparación y reconstrucción para bombas de vacío marca Battioni Pagani. Incluye paletas, rodamientos, sellos, juntas y retenes internos. Restituye el rendimiento original de la bomba.",
+    "compat": [
+      "Bombas Battioni Pagani — todos los modelos"
+    ],
+    "specs": [
+      [
+        "Marca",
+        "Battioni Pagani"
+      ],
+      [
+        "Contenido",
+        "Paletas, rodamientos, sellos, juntas"
+      ],
+      [
+        "Tipo",
+        "Kit de reconstrucción completo"
+      ],
+      [
+        "Compatibilidad",
+        "FAN 420 y FAN 530"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Kit de Reparación Battioni Pagani. Ref: DVK-BP-024"
+  },
+  {
+    "id": 25,
+    "cat": "kits",
+    "sku": "DVK-JRP-025",
+    "badge": "",
+    "img": "https://chandlervac.com/cdn/shop/files/jurop-rebuild-kit-1893000460-RV360-web_940x.jpg?v=1716413716",
+    "imgs": [
+      "https://chandlervac.com/cdn/shop/files/jurop-rebuild-kit-1893000460-RV360-web_940x.jpg?v=1716413716"
+    ],
+    "icon": "🧰",
+    "name": "Kit de Reparación — JUROP",
+    "subtitle": "Para bomba de vacio JUROP modelo RV, LC, PN y mas",
+    "desc": "Kit de reparación y mantenimiento para bombas de vacío JUROP. Paletas, empacadura, o-rings y rodamientos.",
+    "compat": [
+      "Bombas JUROP RV360",
+      "JUROP PN",
+      "JUROP PD",
+      "Serie JUROP LC"
+    ],
+    "specs": [
+      [
+        "Marca",
+        "JUROP"
+      ],
+      [
+        "Contenido",
+        "Paletas, empacadura, o-rings, rodamientos"
+      ],
+      [
+        "Tipo",
+        "Kit de reparacion"
+      ],
+      [
+        "Compatible",
+        "RV, PN, PD, LC series"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Kit de Reparación JUROP. Ref: DVK-JRP-025"
+  },
+  {
+    "id": 26,
+    "cat": "kits",
+    "sku": "DVK-MK-026",
+    "badge": "",
+    "img": "https://www.morousa.com/wp-content/uploads/2023/12/PM80T-Rebuild-Kit.webp",
+    "imgs": [
+      "https://www.morousa.com/wp-content/uploads/2023/12/PM80T-Rebuild-Kit.webp"
+    ],
+    "icon": "🧰",
+    "name": "Kit de Reparación — MORO KAISER",
+    "subtitle": "Para bomba de vacio MORO KAISER",
+    "desc": "Kit de reparación para bombas de vacío MORO KAISER. Incluye paletas, rodamientos, sellos y empacaduras",
+    "compat": [
+      "Bombas MORO KAISER — todos los modelos"
+    ],
+    "specs": [
+      [
+        "Marca",
+        "MORO KAISER"
+      ],
+      [
+        "Contenido",
+        "Paletas, rodamientos, o rings y empacadura"
+      ],
+      [
+        "Tipo",
+        "Kit de reparacion completo"
+      ],
+      [
+        "Compatibilidad",
+        "Consultar modelo de bomba"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Kit de Reparación MORO KAISER. Ref: DVK-MK-026"
+  },
+  {
+    "id": 30,
+    "cat": "mangueras",
+    "sku": "DVH-PIR-030",
+    "badge": "",
+    "img": "https://epasales.com/cdn/shop/files/5A29E723-0422-49B9-8A55-8266E2C28072_535x.png?v=1766587917",
+    "imgs": [
+      "https://epasales.com/cdn/shop/files/5A29E723-0422-49B9-8A55-8266E2C28072_535x.png?v=1766587917",
+      "https://www.raindusa.com/images/sewer-cleaning-hoses-3.jpg"
+    ],
+    "icon": "🔄",
+    "name": "Manguera para Alcantarillado Piranha",
+    "subtitle": "Ideal para camiones vactor, aquatech, vac-con y mas.",
+    "desc": "Manguera tipo Piranha de alta resistencia para trabajo en sistemas de alcantarillado, limpieza de pozos y manejo de lodos abrasivos. Refuerzo múltiple para máxima durabilidad en condiciones extremas.",
+    "compat": [
+      "Camiones vacuum de alcantarillado",
+      "Equipos de limpieza de redes",
+      "Vactor",
+      "Aquatech"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Piranha - Alta presion"
+      ],
+      [
+        "Diámetros",
+        "3/4 y 1 pulgada"
+      ],
+      [
+        "Refuerzo",
+        "Espiral metálica múltiple"
+      ],
+      [
+        "Interior",
+        "Caucho natural / SBR extra duro"
+      ],
+      [
+        "Presión Trabajo",
+        "2500 y 3000 psi"
+      ],
+      [
+        "Aplicación",
+        "Alcantarillado, lodos, arenas"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Manguera para Alcantarillado Piranha. Ref: DVH-PIR-030"
+  },
+  {
+    "id": 31,
+    "cat": "mangueras",
+    "sku": "DVH-BSM-031",
+    "badge": "",
+    "img": "https://jwroberts.com/wp-content/uploads/2021/09/5011_253_detail.jpg",
+    "imgs": [
+      "https://jwroberts.com/wp-content/uploads/2021/09/5011_253_detail.jpg"
+    ],
+    "icon": "🔄",
+    "name": "Manguera Succión Boom Alto Vacío Mixto",
+    "subtitle": "Para camiones vactor / aquatech / similares",
+    "desc": "Manguera de succión para boom de alto vacío mixto.  Alta flexibilidad para manejo con boom articulado en equipos mixtos, vactor, aquatech, supersucker, guzzler, etc",
+    "compat": [
+      "SuperVacuum / Supersucker",
+      "Equipos de alto vacío",
+      "Sistemas boom articulado"
+    ],
+    "specs": [
+      [
+        "Aplicación",
+        "Boom de alto vacío mixto"
+      ],
+      [
+        "Diámetros",
+        "6 y 8 pulgadas"
+      ],
+      [
+        "Refuerzo",
+        "Espiral de acero de alta resistencia"
+      ],
+      [
+        "Flexibilidad",
+        "Radio de curvatura mínimo reducido"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Manguera Succión Boom Alto Vacío Mixto. Ref: DVH-BSM-031"
+  },
+  {
+    "id": 32,
+    "cat": "altovacio",
+    "sku": "DVA-HVP-032",
+    "badge": "",
+    "img": "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/26915c66-0eb8-49ec-ba58-a280cd93bb04/20b20977-9551-4ac3-99c0-9b667f73d72a.png?content-type=image%2Fpng",
+    "imgs": [
+      "https://images.squarespace-cdn.com/content/677fe2dd9524f212e1de1b20/26915c66-0eb8-49ec-ba58-a280cd93bb04/20b20977-9551-4ac3-99c0-9b667f73d72a.png?content-type=image%2Fpng"
+    ],
+    "icon": "⚡",
+    "name": "Piezas y Partes — Alto Vacío Industrial",
+    "subtitle": "Guzzler · Supersucker · GapVax",
+    "desc": "Repuestos y partes para equipos de alto vacío industrial de las marcas Guzzler, Supersucker, GapVax, Vactor, Aquatech y mas. Componentes de bomba, válvulas especiales, mangueras de alta presión y succion, filtros y sellos específicos para estos sistemas de alta capacidad.",
+    "compat": [
+      "Guzzler Combination Units",
+      "Supersucker",
+      "GapVax",
+      "Equipos de alto vacío industrial"
+    ],
+    "specs": [
+      [
+        "Marcas",
+        "Guzzler, Supersucker, GapVax"
+      ],
+      [
+        "Tipo Piezas",
+        "Bomba, válvulas, filtros, mangueras, sellos"
+      ],
+      [
+        "Fluido",
+        "Agua, lodos, hidrocarburos, materiales secos"
+      ],
+      [
+        "Especificación",
+        "Consultar modelo y año del equipo"
+      ],
+      [
+        "Disponibilidad",
+        "A pedido — consultar stock"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Piezas para Equipo de Alto Vacío (Guzzler/Supersucker/GapVax). Ref: DVA-HVP-032"
+  },
+  {
+    "id": 33,
+    "cat": "mangueras",
+    "sku": "DVH-CAM-033",
+    "badge": "",
+    "img": "https://www.proflow-dynamics.com/media/home/AL-Group_edit.jpg",
+    "imgs": [
+      "https://www.proflow-dynamics.com/media/home/AL-Group_edit.jpg"
+    ],
+    "icon": "🔄",
+    "name": "Acoples Tipo Camlock para Mangueras",
+    "subtitle": "Acoples rapidos para mangueras",
+    "desc": "Acoples de conexión rápida tipo Camlock (Cam & Groove) para mangueras industriales. Disponibles en aluminio. Tipo A, B, C, D, E, F, DC, DP según aplicación.",
+    "compat": [
+      "Mangueras de vacío y presión",
+      "Sistemas de carga y descarga",
+      "Cisternas"
+    ],
+    "specs": [
+      [
+        "Tipo",
+        "Camlock"
+      ],
+      [
+        "Norma",
+        "MIL-C-27487 / DIN 2828"
+      ],
+      [
+        "Materiales",
+        "Aluminio"
+      ],
+      [
+        "Tamaños",
+        "desde 3 pulgadas a 6 pulgadas"
+      ],
+      [
+        "Tipos",
+        "A, B, C, D, E, F, DC, DP"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar Acoples Camlock. Ref: DVH-CAM-033"
+  },
+  {
+    "id": 34,
+    "cat": "bocas",
+    "sku": "DVB-AER-001",
+    "badge": "",
+    "img": "https://bulktankinc.com/wp-content/uploads/2021/02/Aerator_A201.jpg",
+    "imgs": [
+      "https://bulktankinc.com/wp-content/uploads/2021/02/Aerator_A201.jpg"
+    ],
+    "icon": "🔵",
+    "name": "Aireadores para cisternas a granel",
+    "subtitle": "Aireadores para cisternas cementeras, material pulverizado, etc.",
+    "desc": "Aireadores para agilizacion de descarga en cisterna para producto a granel. Instalacion de tres aireadores por cono (9 aireadores en total). \n\nDisponible fabricacion nacional OEM y Americanos MADE IN USA",
+    "compat": [],
+    "specs": [
+      [
+        "Marca",
+        "Fabricacion nacional o americanos Made in USA"
+      ]
+    ],
+    "manualUrl": "",
+    "waMsg": "Hola DIVICA, necesito cotizar: Aireadores para cisternas a granel"
+  }
 ];
 
 const DEFAULT_BANNER = {
@@ -1318,21 +2286,23 @@ function applyInline(){
 /* ══════════════ SAVE / RESET ══════════════ */
 async function saveData(){
   showToast("⏳ Publicando cambios...");
-  const payload = {products:PRODUCTS, categories:CATEGORIES, banner:BANNER, inline:INLINE};
+  const payload = {products:PRODUCTS,categories:CATEGORIES,banner:BANNER,inline:INLINE};
   try {
-    const r = await fetch(JB_URL, {
-      method:"PUT",
+    const r = await fetch(JB_URL,{method:"PUT",
       headers:{"Content-Type":"application/json","X-Master-Key":JB_KEY},
-      body:JSON.stringify(payload)
-    });
+      body:JSON.stringify(payload)});
     if(!r.ok) throw new Error("HTTP "+r.status);
-    localStorage.setItem("divica_prods",  JSON.stringify(PRODUCTS));
-    localStorage.setItem("divica_cats",   JSON.stringify(CATEGORIES));
-    localStorage.setItem("divica_banner", JSON.stringify(BANNER));
-    localStorage.setItem("divica_inline", JSON.stringify(INLINE));
-    showToast("✅ ¡Publicado! Los cambios están en vivo");
+    localStorage.setItem("divica_prods", JSON.stringify(PRODUCTS));
+    localStorage.setItem("divica_cats",  JSON.stringify(CATEGORIES));
+    localStorage.setItem("divica_banner",JSON.stringify(BANNER));
+    localStorage.setItem("divica_inline",JSON.stringify(INLINE));
+    showToast("✅ ¡Publicado! Cambios en vivo");
   } catch(e){
-    showToast("✗ Error al guardar: "+e.message);
+    localStorage.setItem("divica_prods", JSON.stringify(PRODUCTS));
+    localStorage.setItem("divica_cats",  JSON.stringify(CATEGORIES));
+    localStorage.setItem("divica_banner",JSON.stringify(BANNER));
+    localStorage.setItem("divica_inline",JSON.stringify(INLINE));
+    showToast("⚠️ Guardado local (sin conexión)");
     console.error(e);
   }
 }
@@ -1340,19 +2310,19 @@ async function saveData(){
 /* ══════════════ CLOUD LOAD ══════════════ */
 async function loadFromCloud(){
   try {
-    const r = await fetch(JB_URL+"/latest",{
-      headers:{"X-Master-Key":JB_KEY,"X-Bin-Meta":"false"}
-    });
+    const r = await fetch(JB_URL+"/latest",{headers:{"X-Master-Key":JB_KEY,"X-Bin-Meta":"false"}});
     if(!r.ok) throw new Error("HTTP "+r.status);
     const d = await r.json();
-    if(d.products && d.products.length){
+    if(d && d.products && d.products.length > 0){
       PRODUCTS   = d.products;
-      CATEGORIES = (d.categories && d.categories.length) ? d.categories : CATEGORIES;
-      BANNER     = (d.banner && d.banner.title)          ? d.banner     : BANNER;
-      INLINE     = d.inline || {};
+      CATEGORIES = (d.categories&&d.categories.length)?d.categories:CATEGORIES;
+      BANNER     = (d.banner&&d.banner.title)?d.banner:BANNER;
+      INLINE     = d.inline||{};
+    } else {
+      // Auto-init JSONBin with default products
+      await saveData();
     }
   } catch(e){
-    // fallback: localStorage cache
     try{
       const p=JSON.parse(localStorage.getItem("divica_prods")||"null");
       if(p&&p.length) PRODUCTS=p;
@@ -1362,7 +2332,7 @@ async function loadFromCloud(){
       if(ban&&ban.title) BANNER=ban;
       INLINE=JSON.parse(localStorage.getItem("divica_inline")||"null")||{};
     }catch(_){}
-    console.warn("JSONBin load failed, usando caché:", e.message);
+    console.warn("JSONBin no disponible:", e.message);
   }
 }
 
